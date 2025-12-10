@@ -1,0 +1,32 @@
+{
+  "version": "1.0",
+  "name": "M4CartPrototype AI Assistant Configuration",
+  "description": "Firebender configuration for Android Instacart Caper Design Tools project",
+  "context": {
+    "alwaysInclude": [
+      {
+        "path": "RULES.md",
+        "description": "Project-specific AI assistant rules, code standards, and conventions"
+      }
+    ],
+    "instructions": "Follow all guidelines specified in RULES.md for code generation, testing, and documentation. Always check existing code patterns before making changes."
+  },
+  "codeStyle": {
+    "language": "kotlin",
+    "framework": "android",
+    "architecture": "mvvm"
+  },
+  "projectInfo": {
+    "type": "Android Application",
+    "package": "com.instacart.caper.designtools",
+    "minSdk": 24,
+    "targetSdk": 36,
+    "javaVersion": 11
+  },
+  "preferences": {
+    "autoImportRules": true,
+    "enforceStyleGuide": true,
+    "requireTests": false,
+    "verboseExplanations": true
+  }
+}
