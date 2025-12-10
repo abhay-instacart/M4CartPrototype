@@ -41,9 +41,8 @@ import androidx.compose.ui.unit.sp
 import com.instacart.caper.designtools.R
 import com.instacart.caper.designtools.data.model.GroceryItem
 import com.instacart.caper.designtools.data.provider.ItemProvider
-import com.instacart.caper.designtools.ui.outlinedBorder
+import com.instacart.caper.designtools.ui.extensions.outlinedBorder
 import com.instacart.caper.designtools.ui.theme.HighlightColor
-import com.instacart.caper.designtools.ui.theme.OutlineColor
 import java.util.Locale
 
 @Composable

@@ -62,7 +62,7 @@ import com.instacart.caper.designtools.data.model.GroceryItem
 import com.instacart.caper.designtools.data.provider.ItemProvider
 import com.instacart.caper.designtools.ui.Fire10Preview
 import com.instacart.caper.designtools.ui.Fire11Preview
-import com.instacart.caper.designtools.ui.outlinedBorder
+import com.instacart.caper.designtools.ui.extensions.outlinedBorder
 import com.instacart.caper.designtools.ui.theme.CheckoutGreen
 import com.instacart.caper.designtools.utils.SoundPlayer
 import kotlinx.coroutines.launch

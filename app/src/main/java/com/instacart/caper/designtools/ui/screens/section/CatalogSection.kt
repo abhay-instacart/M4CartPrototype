@@ -22,12 +22,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.instacart.caper.designtools.data.model.GroceryItem
 import com.instacart.caper.designtools.data.provider.ItemProvider
-import com.instacart.caper.designtools.ui.Fire11Preview
 import com.instacart.caper.designtools.ui.SectionPreview
 import com.instacart.caper.designtools.ui.components.CatalogItemCard
 import com.instacart.caper.designtools.ui.extensions.fadingEdges

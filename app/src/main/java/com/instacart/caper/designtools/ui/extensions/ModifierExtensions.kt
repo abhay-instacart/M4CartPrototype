@@ -1,8 +1,10 @@
 package com.instacart.caper.designtools.ui.extensions
 
 import androidx.compose.foundation.ScrollState
+import androidx.compose.foundation.border
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.grid.LazyGridState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawWithContent
 import androidx.compose.ui.geometry.Offset
@@ -11,6 +13,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.instacart.caper.designtools.ui.theme.OutlineColor
 
 /**
  * Extension function to add fading edges to scrollable content (for verticalScroll).
@@ -200,3 +203,16 @@ fun Modifier.fadingEdges(
         }
     }
 )
+
+/**
+ * Applies a standard outlined border style used throughout the app.
+ *
+ * This creates a 2dp border with OutlineColor and 16dp rounded corners.
+ */
+fun Modifier.outlinedBorder(): Modifier {
+    return border(
+        width = 2.dp,
+        color = OutlineColor,
+        shape = RoundedCornerShape(16.dp)
+    )
+}
