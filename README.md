@@ -229,29 +229,30 @@ The catalog section contains 15 pre-packaged grocery items:
 
 ## Produce Items
 
-The produce section contains 19 fresh items that require weighing:
+The produce section contains 20 fresh items that require weighing:
 
-| Item | Base Price | Approx. Weight | Barcode |
-|------|------------|----------------|---------|
-| Red Delicious Apples | $2.99 | 1.5 lb | 0000000042101 |
-| Gala Apples | $3.49 | 2 lb | 0000000042102 |
-| Granny Smith Apples | $3.29 | 1.8 lb | 0000000042103 |
-| Fresh Avocado | $1.99 | 0.4 lb | 0000000042104 |
-| Yellow Bananas | $0.99 | 1 lb | 0000000042105 |
-| Organic Carrots | $2.49 | 2 lb | 0000000042106 |
-| English Cucumber | $1.49 | 0.8 lb | 0000000042107 |
-| Durian | $12.99 | 3 lb | 0000000042108 |
-| Fresh Lemon | $0.79 | 0.3 lb | 0000000042109 |
-| Yellow Onion | $1.29 | 0.5 lb | 0000000042110 |
-| Red Onion | $1.49 | 0.6 lb | 0000000042111 |
-| Sweet Onion | $1.79 | 0.7 lb | 0000000042112 |
-| Valencia Orange | $1.99 | 0.6 lb | 0000000042113 |
-| Mandarin Orange | $2.49 | 0.5 lb | 0000000042114 |
-| Bartlett Pear | $2.29 | 0.7 lb | 0000000042115 |
-| Russet Potato | $0.89 | 0.8 lb | 0000000042116 |
-| Butternut Squash | $2.99 | 1.2 lb | 0000000042117 |
-| Sweet Potato | $1.99 | 1 lb | 0000000042118 |
-| Watermelon | $6.99 | 8 lb | 0000000042119 |
+| Item                 | Base Price | Approx. Weight | Barcode       |
+|----------------------|------------|----------------|---------------|
+| Red Delicious Apples | $2.99      | 1.5 lb         | 0000000042101 |
+| Gala Apples          | $3.49      | 2 lb           | 0000000042102 |
+| Granny Smith Apples  | $3.29      | 1.8 lb         | 0000000042103 |
+| Fresh Avocado        | $1.99      | 0.4 lb         | 0000000042104 |
+| Yellow Bananas       | $0.99      | 1 lb           | 0000000042105 |
+| Organic Carrots      | $2.49      | 2 lb           | 0000000042106 |
+| English Cucumber     | $1.49      | 0.8 lb         | 0000000042107 |
+| Durian               | $12.99     | 3 lb           | 0000000042108 |
+| Fresh Lemon          | $0.79      | 0.3 lb         | 0000000042109 |
+| Yellow Onion         | $1.29      | 0.5 lb         | 0000000042110 |
+| Red Onion            | $1.49      | 0.6 lb         | 0000000042111 |
+| Sweet Onion          | $1.79      | 0.7 lb         | 0000000042112 |
+| Valencia Orange      | $1.99      | 0.6 lb         | 0000000042113 |
+| Mandarin Orange      | $2.49      | 0.5 lb         | 0000000042114 |
+| Bartlett Pear        | $2.29      | 0.7 lb         | 0000000042115 |
+| Russet Potato        | $0.89      | 0.8 lb         | 0000000042116 |
+| Butternut Squash     | $2.99      | 1.2 lb         | 0000000042117 |
+| Sweet Potato         | $1.99      | 1 lb           | 0000000042118 |
+| Watermelon           | $6.99      | 8 lb           | 0000000042119 |
+| Mac and Cheese       | $5.99      | 1.5 lb         | 0000000042120 |
 
 ---
 
