@@ -69,7 +69,7 @@ fun ProduceSearchScreen(
             allProduceItems
         } else {
             allProduceItems.filter { item ->
-                item.title.contains(searchQuery, ignoreCase = true) ||
+                item.name.contains(searchQuery, ignoreCase = true) ||
                         item.barcode.contains(searchQuery, ignoreCase = true)
             }
         }

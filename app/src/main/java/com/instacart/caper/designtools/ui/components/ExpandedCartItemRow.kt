@@ -132,7 +132,7 @@ fun ExpandedCartItemRow(
                 if (imageBitmap != null) {
                     Image(
                         bitmap = imageBitmap,
-                        contentDescription = cartItem.groceryItem.title,
+                        contentDescription = cartItem.groceryItem.name,
                         modifier = Modifier
                             .padding(vertical = 8.dp)
                             .size(72.dp),
@@ -141,7 +141,7 @@ fun ExpandedCartItemRow(
                 } else {
                     Icon(
                         imageVector = Icons.Default.ShoppingCart,
-                        contentDescription = cartItem.groceryItem.title,
+                        contentDescription = cartItem.groceryItem.name,
                         tint = Color(0xFFE0E0E0),
                         modifier = Modifier.size(72.dp)
                     )
@@ -173,7 +173,7 @@ fun ExpandedCartItemRow(
 
             // Product title
             Text(
-                text = cartItem.groceryItem.title,
+                text = cartItem.groceryItem.name,
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Normal,
                 color = Color.Black,

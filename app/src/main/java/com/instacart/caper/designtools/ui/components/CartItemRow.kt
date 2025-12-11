@@ -130,7 +130,7 @@ fun CartItemRow(
             if (imageBitmap != null) {
                 Image(
                     bitmap = imageBitmap,
-                    contentDescription = cartItem.groceryItem.title,
+                    contentDescription = cartItem.groceryItem.name,
                     modifier = Modifier
                         .size(72.dp),
                     contentScale = ContentScale.Fit
@@ -138,7 +138,7 @@ fun CartItemRow(
             } else {
                 Icon(
                     imageVector = Icons.Default.ShoppingCart,
-                    contentDescription = cartItem.groceryItem.title,
+                    contentDescription = cartItem.groceryItem.name,
                     tint = Color(0xFFE0E0E0),
                     modifier = Modifier
                         .size(72.dp)
@@ -178,7 +178,8 @@ fun CartItemRow(
             text = "$${String.format(Locale.US, "%.2f", totalPrice)}",
             textAlign = TextAlign.Center,
             fontSize = 20.sp,
-            fontWeight = FontWeight.Bold
+            fontWeight = FontWeight.Bold,
+            color = Color.Black
         )
 
         // Circular progress indicator (only shown when showProgress is true)

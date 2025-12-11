@@ -264,7 +264,7 @@ private fun ProduceItemCard(
             imageBitmap?.let {
                 Image(
                     bitmap = it,
-                    contentDescription = item.title,
+                    contentDescription = item.name,
                     modifier = Modifier.size(120.dp),
                     contentScale = ContentScale.Fit
                 )
@@ -276,7 +276,7 @@ private fun ProduceItemCard(
         // Item details
         Column {
             Text(
-                text = item.title,
+                text = item.name,
                 fontSize = 28.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.Black

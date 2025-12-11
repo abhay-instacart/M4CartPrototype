@@ -56,6 +56,7 @@ import com.instacart.caper.designtools.ui.theme.BackgroundBeige
 import com.instacart.caper.designtools.ui.theme.CheckoutGreen
 import com.instacart.caper.designtools.ui.viewmodel.CartItem
 import com.instacart.caper.designtools.ui.viewmodel.CartState
+import com.instacart.caper.designtools.utils.KeyboardShortcuts
 
 @Composable
 fun HomeScreen(
@@ -92,45 +93,15 @@ fun HomeScreen(
             .focusRequester(focusRequester)
             .onKeyEvent { keyEvent ->
                 if (!showInstructions && keyEvent.type == KeyEventType.KeyDown) {
-                    when (keyEvent.key) {
-                        Key.A -> {
-                            // Add random item
-                            onAddItem(ItemProvider.getRandomCatalogItem())
-                            true
-                        }
-
-                        Key.One -> {
-                            // Add Sushi (index 10)
-                            onAddItem(ItemProvider.getAllCatalogItems()[10])
-                            true
-                        }
-
-                        Key.Two -> {
-                            // Add Birthday Cake (index 1)
-                            onAddItem(ItemProvider.getAllCatalogItems()[1])
-                            true
-                        }
-
-                        Key.Three -> {
-                            // Add Charmin Toilet Paper (index 11)
-                            onAddItem(ItemProvider.getAllCatalogItems()[11])
-                            true
-                        }
-
-                        Key.Four -> {
-                            // Add Poland Spring Water (index 13)
-                            onAddItem(ItemProvider.getAllCatalogItems()[13])
-                            true
-                        }
-
-                        Key.Five -> {
-                            // Add Purina One Dog Food (index 3)
-                            onAddItem(ItemProvider.getAllCatalogItems()[3])
-                            true
-                        }
-
-                        else -> false
+                    if (keyEvent.key == Key.A) {
+                        ItemProvider.getRandomCatalogItem()
+                    } else {
+                        KeyboardShortcuts.getItemForKey(keyEvent.key)
+                    }?.let { item ->
+                        onAddItem(item)
+                        true
                     }
+                    false
                 } else {
                     false
                 }

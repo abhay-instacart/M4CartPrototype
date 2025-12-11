@@ -30,6 +30,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import com.instacart.caper.designtools.ui.extensions.fadingEdges
 import com.instacart.caper.designtools.ui.theme.CheckoutGreen
+import com.instacart.caper.designtools.utils.KeyboardShortcuts
 
 /**
  * Keyboard shortcuts dialog that shows a list of shortcuts for the app.
@@ -45,7 +46,7 @@ fun KeyboardShortcutsDialog(
             shape = RoundedCornerShape(16.dp),
             colors = CardDefaults.cardColors(containerColor = Color.White),
             modifier = Modifier
-                .width(520.dp)
+                .width(600.dp)
                 .height(520.dp)
         ) {
             Column(
@@ -85,26 +86,12 @@ fun KeyboardShortcutsDialog(
                             key = "A",
                             description = "Add random catalog item"
                         )
-                        DebugMenuRow(
-                            key = "1",
-                            description = "Add Sushi"
-                        )
-                        DebugMenuRow(
-                            key = "2",
-                            description = "Add Birthday Cake"
-                        )
-                        DebugMenuRow(
-                            key = "3",
-                            description = "Add Charmin Toilet Paper"
-                        )
-                        DebugMenuRow(
-                            key = "4",
-                            description = "Add Poland Spring Water"
-                        )
-                        DebugMenuRow(
-                            key = "5",
-                            description = "Add Purina One Dog Food"
-                        )
+                        KeyboardShortcuts.numberedKeyMappings.forEach { mapping ->
+                            DebugMenuRow(
+                                key = mapping.keyValue,
+                                description = mapping.description
+                            )
+                        }
                     }
 
                     // Divider
@@ -204,7 +191,7 @@ fun DebugMenuRow(
     }
 }
 
-@Preview(device = "spec:width=540dp,height=540dp")
+@Preview
 @Composable
 fun KeyboardShortcutsDialogPreview() {
     MaterialTheme {

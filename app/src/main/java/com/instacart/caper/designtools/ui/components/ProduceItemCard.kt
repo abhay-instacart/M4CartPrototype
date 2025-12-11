@@ -59,7 +59,7 @@ fun ProduceItemCard(
         if (imageBitmap != null) {
             Image(
                 bitmap = imageBitmap,
-                contentDescription = item.title,
+                contentDescription = item.name,
                 modifier = Modifier
                     .fillMaxWidth()
                     .size(120.dp),
@@ -68,7 +68,7 @@ fun ProduceItemCard(
         } else {
             Icon(
                 imageVector = Icons.Default.ShoppingCart,
-                contentDescription = item.title,
+                contentDescription = item.name,
                 tint = Color(0xFFE0E0E0),
                 modifier = Modifier
                     .fillMaxWidth()
@@ -78,7 +78,7 @@ fun ProduceItemCard(
 
         // Item title
         Text(
-            text = item.title,
+            text = item.name,
             style = MaterialTheme.typography.bodyLarge,
             fontSize = 20.sp,
             fontWeight = FontWeight.Normal,

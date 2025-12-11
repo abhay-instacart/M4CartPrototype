@@ -71,7 +71,7 @@ fun CatalogItemCard(
         if (imageBitmap != null) {
             Image(
                 bitmap = imageBitmap,
-                contentDescription = item.title,
+                contentDescription = item.name,
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(140.dp)
@@ -81,7 +81,7 @@ fun CatalogItemCard(
         } else {
             Icon(
                 imageVector = Icons.Default.ShoppingCart,
-                contentDescription = item.title,
+                contentDescription = item.name,
                 tint = Color(0xFFE0E0E0),
                 modifier = Modifier
                     .fillMaxWidth()
@@ -119,7 +119,7 @@ fun CatalogItemCard(
 
         // Title (with min lines of 2)
         Text(
-            text = item.title,
+            text = item.name,
             fontSize = 20.sp,
             color = Color.Black,
             fontWeight = FontWeight.Normal,
