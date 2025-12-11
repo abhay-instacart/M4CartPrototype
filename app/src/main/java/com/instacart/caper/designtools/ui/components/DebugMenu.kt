@@ -119,7 +119,7 @@ fun KeyboardShortcutsDialog(
                         )
                         DebugMenuRow(
                             key = "E",
-                            description = "Show error dialog (requires weight > 0)"
+                            description = "Simulate weight fluctuation error"
                         )
                     }
                 }

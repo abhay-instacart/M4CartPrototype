@@ -195,8 +195,9 @@ enabled "Confirm" button.
 
 #### Weight Error Dialog
 
-If there's an error during weighing (press 'E' key), an error dialog appears prompting you to weigh
-again.
+If there's an error during weighing (press 'E' key), the weight will fluctuate for 1.5 seconds
+before an error dialog appears. The weight continues to fluctuate while the error is displayed,
+prompting you to weigh again.
 
 ![Produce Search - Weight Error](app/src/main/assets/screenshots/produce_bottom-scale-measured-error.png)
 
@@ -277,10 +278,10 @@ These shortcuts work on the Home Screen for quick item addition:
 
 These shortcuts work when the produce weighing dialog is open:
 
-| Key   | Action            | Description                                                                  |
-|-------|-------------------|------------------------------------------------------------------------------|
-| **W** | Simulate weighing | Randomizes weight between 1.0 and 10.0 lbs                                   |
-| **E** | Trigger error     | Shows "weight did not properly converge" error dialog (only when weight > 0) |
+| Key   | Action            | Description                                                                                                           |
+|-------|-------------------|-----------------------------------------------------------------------------------------------------------------------|
+| **W** | Simulate weighing | Randomizes weight between 1.0 and 10.0 lbs                                                                            |
+| **E** | Trigger error     | Generates random weight that fluctuates for 1.5s, then shows error dialog. Weight continues fluctuating during error. |
 
 **Note:** These shortcuts simulate the weighing process without needing actual scale hardware.
 

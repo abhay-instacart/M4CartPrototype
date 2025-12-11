@@ -87,12 +87,34 @@ fun ProduceItemBottomSheet(
     var weight by remember { mutableDoubleStateOf(0.0) }
     var displayedPrice by remember { mutableDoubleStateOf(0.0) }
     var showErrorDialog by remember { mutableStateOf(false) }
+    var isFluctuating by remember { mutableStateOf(false) }
     val totalPrice = weight * item.price
 
     // Update displayed price with a delay after weight changes
     LaunchedEffect(weight) {
         kotlinx.coroutines.delay(500)
         displayedPrice = totalPrice
+    }
+
+    // Handle weight fluctuation when E is pressed
+    LaunchedEffect(isFluctuating) {
+        if (isFluctuating) {
+            val startTime = System.currentTimeMillis()
+            var baseWeight = weight
+
+            while (isFluctuating) {
+                kotlinx.coroutines.delay(500)
+
+                // Add random fluctuation between -0.5 and 0.5 lbs
+                val fluctuation = Random.nextDouble(-0.25, 0.25)
+                weight = (baseWeight + fluctuation).coerceAtLeast(0.0)
+
+                // After 1.5 seconds, show error dialog (but keep fluctuating)
+                if (System.currentTimeMillis() - startTime >= 1500 && !showErrorDialog) {
+                    showErrorDialog = true
+                }
+            }
+        }
     }
 
     // Focus requester to ensure the composable can receive key events
@@ -128,9 +150,10 @@ fun ProduceItemBottomSheet(
                         }
 
                         Key.E -> {
-                            // Show error dialog only if weight and price are not 0
-                            if (weight > 0 && displayedPrice > 0) {
-                                showErrorDialog = true
+                            // Start weight fluctuation with random initial weight
+                            if (!isFluctuating) {
+                                weight = Random.nextDouble(1.0, 10.0)
+                                isFluctuating = true
                             }
                             true // Event handled
                         }
@@ -182,7 +205,8 @@ fun ProduceItemBottomSheet(
             WeightAndPriceSection(
                 weight = weight,
                 displayedPrice = displayedPrice,
-                onConfirm = { onConfirm(weight, displayedPrice) }
+                onConfirm = { onConfirm(weight, displayedPrice) },
+                isFluctuating = isFluctuating
             )
 
             Spacer(modifier = Modifier.height(8.dp))
@@ -225,6 +249,7 @@ fun ProduceItemBottomSheet(
                 ErrorDialog(
                     message = "Unfortunately, the weight did not properly converge. Please weigh again.",
                     onDismiss = {
+                        isFluctuating = false
                         showErrorDialog = false
                         weight = 0.0
                         displayedPrice = 0.0
@@ -306,7 +331,8 @@ private fun ProduceItemCard(
 private fun WeightAndPriceSection(
     weight: Double,
     displayedPrice: Double,
-    onConfirm: () -> Unit
+    onConfirm: () -> Unit,
+    isFluctuating: Boolean
 ) {
     var previousWeight by remember { mutableDoubleStateOf(weight) }
     var previousPrice by remember { mutableDoubleStateOf(displayedPrice) }
@@ -322,7 +348,7 @@ private fun WeightAndPriceSection(
         previousPrice = displayedPrice
     }
 
-    val isEnabled = weight > 0 && displayedPrice > 0
+    val isEnabled = weight > 0 && displayedPrice > 0 && !isFluctuating
     val buttonColor by animateColorAsState(
         targetValue = if (isEnabled) CheckoutGreen else Color.LightGray,
         animationSpec = tween(durationMillis = 300),
